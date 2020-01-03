@@ -11,7 +11,7 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt5 COMPONENTS Core Quick QuickControls2 REQUIRED)
+find_package(Qt5 COMPONENTS Core Quick QuickControls2 Sql REQUIRED)
 
 include_directories(${CMAKE_SOURCE_DIR}
     ${CMAKE_CURRENT_BINARY_PATH}
@@ -39,6 +39,7 @@ target_link_libraries(${PROJECT_NAME}
     Qt5::Core
     Qt5::Quick
     Qt5::QuickControls2
+    Qt5::Sql
     )
 
 # QtCreator supports the following variables for Android, which are identical to qmake Android variables.

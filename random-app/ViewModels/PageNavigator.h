@@ -6,6 +6,7 @@
 #include <QObject>
 #include <QMap>
 
+
 #include "../Models/PageList.h"
 
 // This singleton class is responsible for the page navigation of the

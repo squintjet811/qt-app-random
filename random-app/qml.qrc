@@ -4,8 +4,20 @@
         <file>ViewModels/PageNavigator.cpp</file>
         <file>ViewModels/PageNavigator.h</file>
         <file>Models/PageList.h</file>
-        <file>LoginPage.qml</file>
         <file>PageNavigator.qml</file>
         <file>Page1.qml</file>
+        <file>QMLPages/Login/readme.txt</file>
+        <file>QMLPages/Login/Login.qml</file>
+        <file>QMLPages/Robot/readme.txt</file>
+        <file>QMLPages/Images/background_android.jpg</file>
+        <file>CMakeLists.txt</file>
+        <file>main.cpp</file>
+        <file>qml.qrc</file>
+        <file>QMLPages/Util/readme.txt</file>
+        <file>QMLPages/Util/TextInputBox.qml</file>
+        <file>QMLPages/UIStyle/readme.txt</file>
+        <file>QMLPages/UIStyle/UIStyle.qml</file>
+        <file>ViewModels/DataBaseConnectViewModel.cpp</file>
+        <file>ViewModels/DataBaseConnectViewModel.h</file>
     </qresource>
 </RCC>

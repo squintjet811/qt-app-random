@@ -42,7 +42,7 @@ void PageNavigatorViewModel::InitializeData()
 {
     QMap<int, QString> dataList;
 
-    dataList.insert(static_cast<int>(PageList::LoginPage), QStringLiteral("qrc:/Page1.qml"));
+    dataList.insert(static_cast<int>(PageList::LoginPage), QStringLiteral("qrc:/QMLPages/Login/Login.qml"));
 
     m_PageListMap = dataList;
 }
