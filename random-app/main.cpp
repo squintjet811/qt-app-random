@@ -3,6 +3,7 @@
 #include <QtQuick>
 #include "ViewModels/PageNavigator.h"
 #include "Models/PageList.h"
+#include "Service/DataBaseConnector.h"
 
 int main(int argc, char *argv[])
 {
@@ -11,6 +12,10 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
 
     QQuickView *view = new QQuickView;
+
+    DataBaseConnector dataBaseConnector; //DataBase Connector
+    dataBaseConnector.Open();
+
     auto pagesMapping = PageNavigatorViewModel::GetInstance().GetPageIndexMap();
 
 

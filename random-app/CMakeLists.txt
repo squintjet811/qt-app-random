@@ -27,6 +27,8 @@ file(GLOB MODEL_SOURCE_FILES
     "./ViewModels/*.cpp"
     "./Models/*.h"
     "./Models/*.cpp"
+    "./Service/*.h"
+    "./Service/*.cpp"
     )
 
 add_executable(${PROJECT_NAME}

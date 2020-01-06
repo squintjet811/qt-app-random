@@ -17,7 +17,10 @@
         <file>QMLPages/Util/TextInputBox.qml</file>
         <file>QMLPages/UIStyle/readme.txt</file>
         <file>QMLPages/UIStyle/UIStyle.qml</file>
-        <file>ViewModels/DataBaseConnectViewModel.cpp</file>
-        <file>ViewModels/DataBaseConnectViewModel.h</file>
+        <file>Service/readme.txt</file>
+        <file>Service/DataBaseConnector.cpp</file>
+        <file>Service/DataBaseConnector.h</file>
+        <file>Models/LoginModel.cpp</file>
+        <file>Models/LoginModel.h</file>
     </qresource>
 </RCC>

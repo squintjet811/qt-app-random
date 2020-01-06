@@ -5,10 +5,9 @@
 
 #include <QObject>
 #include <QMap>
-
+#include <memory>
 
 #include "../Models/PageList.h"
-
 // This singleton class is responsible for the page navigation of the
 // application. It is accessible to all other classes in the backend
 // as well as components at the frontend (ideally the frontend should never
@@ -63,10 +62,10 @@ private:
     static QMap<int, QString> m_PageListMap;
 
     static void InitializeData();
-
     int m_CurrentPageIndex = 0;
     int m_PreviousPageIndex = 0;
     int m_HomePageIndex = 0;
+
 };
 
 #endif //
