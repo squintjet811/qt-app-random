@@ -22,5 +22,8 @@
         <file>Service/DataBaseConnector.h</file>
         <file>Models/LoginModel.cpp</file>
         <file>Models/LoginModel.h</file>
+        <file>QMLPages/UIStyle/qmldir</file>
+        <file>ViewModels/LoginViewModel.h</file>
+        <file>ViewModels/LoginViewModel.cpp</file>
     </qresource>
 </RCC>

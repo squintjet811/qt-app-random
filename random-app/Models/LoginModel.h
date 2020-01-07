@@ -4,7 +4,7 @@
 
 #include <string>
 #include <memory>
-
+#include <iostream>
 #include "../ViewModels/PageNavigator.h"
 #include "../Service/DataBaseConnector.h"
 #include "PageList.h"
@@ -12,7 +12,7 @@
 class LoginModel
 {
 public:
-    LoginModel(std::shared_ptr<DataBaseConnector> dataBaseConnector);
+    LoginModel(DataBaseConnector &dataBaseConnector);
     void SetUsername(std::string username);
     std::string GetUsername() const;
 
@@ -31,11 +31,12 @@ public:
     };
 
 private:
-    std::string m_UserRole = "";
-    std::string m_Username = "";
-    std::string m_Password = "";
+    std::string m_UserRole;
+    std::string m_Username;
+    std::string m_Password;
     PageNavigatorViewModel & m_PageNavigator;
-    std::shared_ptr<DataBaseConnector> m_DataBaseConnector;
+    //std::shared_ptr<DataBaseConnector> m_DataBaseConnector;
+    DataBaseConnector *m_pDataBaseConnector;
 };
 
 #endif // LOGINM_H

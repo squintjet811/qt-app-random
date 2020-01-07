@@ -1,12 +1,13 @@
 #include "LoginModel.h"
-#include"Services/AuthenticatorService.h"
-
 #include <string>
 
-LoginModel::LoginModel(std::shared_ptr<DataBaseConnector> dataBaseConnector):
+LoginModel::LoginModel(DataBaseConnector &dataBaseConnector):
     m_PageNavigator(PageNavigatorViewModel::GetInstance())
 {
-   m_DataBaseConnector = dataBaseConnector;
+   m_pDataBaseConnector = &dataBaseConnector;
+   m_UserRole = "";
+   m_Username = "";
+   m_Password = "";
 }
 
 void LoginModel::SetUsername(std::string username)
@@ -17,6 +18,7 @@ void LoginModel::SetUsername(std::string username)
 
 std::string LoginModel::GetUsername() const
 {
+    std::cout << "calling get function" << std::endl;
     return m_Username;
 }
 
@@ -45,9 +47,9 @@ bool LoginModel::AuthenticateLogin()
 {
     bool isLoginOk = false;
     std::string queryStatement = "SELECT Role From UserTable Where Username=" + m_Username + "And" + m_Password;
-    if(m_DataBaseConnector->GetQueryObject()->open())
+    if((*m_pDataBaseConnector).GetQueryObject()->open())
     {
-         QSqlQuery dBQuery(*m_DataBaseConnector->GetQueryObject());
+         QSqlQuery dBQuery(*m_pDataBaseConnector->GetQueryObject());
          dBQuery.prepare(QString::fromStdString(queryStatement));
          dBQuery.exec();
          int count = 0;
@@ -57,7 +59,7 @@ bool LoginModel::AuthenticateLogin()
          }
          if(count != 0)
          {
-             isLoginOk = true
+             isLoginOk = true;
          }
 
     }
