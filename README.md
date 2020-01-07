@@ -8,9 +8,10 @@ You can clone the package and build with CMakelist in qtcreator. Currently the o
 
 ### First Stage
 #### I will implement a basic login page which is similar to what I have done in my previous company. What will be different is there the login information will be saved into a database. 
-Progress: 70%
-Expected delivery: 10-Jan-2020
-Currently Login Interface:
+Progress: 70% <br/>
+Expected delivery: 10-Jan-2020 <br/>
+Currently Login Interface:<br/>
+
 ![Image app_login](app_login.png)
 
 
