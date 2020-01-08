@@ -25,5 +25,11 @@
         <file>QMLPages/UIStyle/qmldir</file>
         <file>ViewModels/LoginViewModel.h</file>
         <file>ViewModels/LoginViewModel.cpp</file>
+        <file>QMLPages/Login/Admin.qml</file>
+        <file>Models/AdminModel.cpp</file>
+        <file>Models/AdminModel.h</file>
+        <file>ViewModels/AdminViewModel.cpp</file>
+        <file>ViewModels/AdminViewModel.h</file>
+        <file>QMLPages/Login/AddUser.qml</file>
     </qresource>
 </RCC>

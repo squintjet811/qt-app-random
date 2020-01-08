@@ -13,6 +13,7 @@ class LoginModel
 {
 public:
     LoginModel(DataBaseConnector &dataBaseConnector);
+    ~LoginModel();
     void SetUsername(std::string username);
     std::string GetUsername() const;
 
@@ -35,7 +36,7 @@ private:
     std::string m_Username;
     std::string m_Password;
     PageNavigatorViewModel & m_PageNavigator;
-    //std::shared_ptr<DataBaseConnector> m_DataBaseConnector;
+    //std::shared_ptr<DataBaseConnector> m_pDataBaseConnector;
     DataBaseConnector *m_pDataBaseConnector;
 };
 
