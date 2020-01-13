@@ -7,6 +7,11 @@ m_PageNavigator(PageNavigatorViewModel::GetInstance())
     m_pDataBaseConnector = &dataBaseConnector;
 }
 
+AdminModel::~AdminModel()
+{
+    delete m_pDataBaseConnector;
+}
+
 void AdminModel::AddUser()
 {
     m_PageNavigator.SetCurrentPage(static_cast<int>(PageList::AddUser));
@@ -17,7 +22,25 @@ void AdminModel::RemoveUser()
 
 }
 
-AdminModel::~AdminModel()
+void AdminModel::querUser(QSqlQuery dBQery)
 {
-    delete m_pDataBaseConnector;
+
+    std::string queryStatement =
+        "SELECT users.firstName, users.lastName, GROUP_CONCAT(usersToRoles.role SEPARATOR ',') FROM users LEFT JOIN  usersToRoles ON users.id = usersToRoles.id GROUP BY users.firstName, users.lastName;";
+    std::cout << queryStatement << std::endl;
+    if((*m_pDataBaseConnector).GetQueryObject()->open())
+    {
+
+         dBQery = QSqlQuery(*m_pDataBaseConnector->GetQueryObject());
+         dBQery.exec(QString::fromStdString(queryStatement));
+         std::cout << "Number of records: " <<dBQery.record().count() <<std::endl;
+    }
+    else
+    {
+
+        std::cout << "Database is not connected" << std::endl;
+    }
+    return;
 }
+
+

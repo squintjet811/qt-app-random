@@ -4,6 +4,7 @@
 #include "ViewModels/PageNavigator.h"
 #include "ViewModels/LoginViewModel.h"
 #include "ViewModels/AdminViewModel.h"
+#include "ViewModels/NewUserViewModel.h"
 
 #include "Models/PageList.h"
 #include "Service/DataBaseConnector.h"
@@ -28,6 +29,9 @@ int main(int argc, char *argv[])
     static std::shared_ptr<AdminModel> adminModel = std::make_shared<AdminModel>(dataBaseConnector);
     AdminViewModel adminViewModel(adminModel);
 
+    static std::shared_ptr<NewUserModel> newUserModel = std::make_shared<NewUserModel>(dataBaseConnector);
+    NewUserViewModel newUserViewModel(newUserModel);
+
     auto pagesMapping = PageNavigatorViewModel::GetInstance().GetPageIndexMap();
 
 
@@ -36,7 +40,9 @@ int main(int argc, char *argv[])
     view->rootContext()->setContextProperty("listOfPages", QVariant::fromValue(dataList));
     view->rootContext()->setContextProperty("loginViewModel", &loginViewModel);
     view->rootContext()->setContextProperty("adminViewModel", &adminViewModel);
-    view->setSource(QStringLiteral("qrc:/main.qml"));
+    view->rootContext()->setContextProperty("newUserViewModel", &newUserViewModel);
+
+    view->setSource(QStringLiteral("qrc:/QMLPages/Login/Admin.qml"));
     //view->show();
 
     return app.exec();

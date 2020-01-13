@@ -135,7 +135,7 @@ Page
             {
                 id: nurseRole
                 text: qsTr("Nurse")
-                checked: newUserViewModel.isNurseRole
+                //checked: newUserViewModel.isNurseRole
                 Binding
                 {
                     target: newUserViewModel
@@ -149,7 +149,7 @@ Page
             {
                 id: surgeonRole
                 text: qsTr("Surgeon")
-                checked: newUserViewModel.isSurgeonRole
+                //checked: newUserViewModel.isSurgeonRole
 
                 Binding
                 {
@@ -164,7 +164,7 @@ Page
             {
                 id: techRole
                 text: qsTr("Tech")
-                checked: newUserViewModel.isTechRole
+                //checked: newUserViewModel.isTechRole
                 Binding
                 {
                     target: newUserViewModel
@@ -178,7 +178,7 @@ Page
             {
                 id: adminRole
                 text: qsTr("Admin")
-                checked: newUserViewModel.isAdminRole
+                //checked: newUserViewModel.isAdminRole
                 Binding
                 {
                     target: newUserViewModel
@@ -186,34 +186,7 @@ Page
                     value: adminRole.checked
                 }
 
-            }
-
-            RadioButton
-            {
-                id: testingRole
-                text: qsTr("Testing")
-                checked: newUserViewModel.isTestingRole
-                Binding
-                {
-                    target: newUserViewModel
-                    property: "isTestingRole"
-                    value: testingRole.checked
-                }
-
-            }
-
-            RadioButton
-            {
-                id: engineerRole
-                text: qsTr("Engineer")
-                checked: newUserViewModel.isEngineerRole
-                Binding
-                {
-                    target: newUserViewModel
-                    property: "isEngineerRole"
-                    value: engineerRole.checked
-                }
-            }
+            }          
         }
 
         Item
@@ -282,6 +255,7 @@ Page
             }
         }
     }
+    /*
     Connections
     {
         target: headerViewModel
@@ -290,6 +264,7 @@ Page
             newUserViewModel.resetValues()
         }
     }
+    */
 }
 
 
