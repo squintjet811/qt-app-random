@@ -14,6 +14,12 @@ Currently Login Interface:<br/>
 
 ![Image app_login](app_login.png)
 
+Now, it supports you to have a login credientials with <br/>
+username: admin <br/>
+password: admin <br/>
+And you will get into the admin page.
+![Image app_admin](admin_page.png)
+
 
 ### Second Stage
 #### I will add more front-end qml elements to make the app visually appealing
