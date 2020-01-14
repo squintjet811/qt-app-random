@@ -8,9 +8,10 @@ You can clone the package and build with CMakelist in qtcreator. Currently the o
 
 ### First Stage
 #### I will implement a basic login page which is similar to what I have done in my previous company. What will be different is there the login information will be saved into a database. 
-Progress: 70% <br/>
-Expected delivery: 10-Jan-2020 <br/>
+Progress: 90% <br/>
+Expected delivery: 15-Jan-2020 <br/>
 Currently Login Interface:<br/>
+Current progress: need to create the sql syntax for user creation in the database with qt/c++ apis
 
 ![Image app_login](app_login.png)
 
@@ -19,6 +20,9 @@ username: admin <br/>
 password: admin <br/>
 And you will get into the admin page.
 ![Image app_admin](admin_page.png)
+
+Click the add user button it will lead you to the add user page.
+![Image app_adduser](new_user.png)
 
 
 ### Second Stage
