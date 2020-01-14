@@ -37,6 +37,7 @@ void AdminViewModel::updateQuery()
 {
     m_pAdminModel->querUser(*m_dBQuery);
 }
+
 QVariant AdminViewModel::data(const QModelIndex &index, int role) const
 {
     int row = index.row();
@@ -58,9 +59,14 @@ QVariant AdminViewModel::data(const QModelIndex &index, int role) const
             return dBRecord.value(dBRecord.indexOf(m_roleNames[static_cast<int>(RoleNames::firstName)]));
 
         case static_cast<int>(RoleNames::lastName):
+
             return dBRecord.value(dBRecord.indexOf(m_roleNames[static_cast<int>(RoleNames::lastName)]));
 
         case static_cast<int>(RoleNames::role):
+            std::cout << "Role called" <<std::endl;
+            //qDebug() << dBRecord.field(0).name() ;
+            //qDebug() << dBRecord.field(1).name() ;
+            //qDebug() << dBRecord.field(2).name() ;
             return dBRecord.value(dBRecord.indexOf(m_roleNames[static_cast<int>(RoleNames::role)]));
 
         default:

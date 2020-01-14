@@ -46,6 +46,45 @@ void NewUserModel::SetUserRole(std::string userRole)
 
 }
 
+void NewUserModel::SetAdminRole(bool isChecked){
+    //std::cout << "Set admin : " << isChecked << std::endl;
+    m_IsRole[static_cast<int>(m_Roles::Admin)] = isChecked;
+}
+
+void NewUserModel::SetNurseRole(bool isChecked){
+    m_IsRole[static_cast<int>(m_Roles::Nurse)] = isChecked;
+}
+
+void NewUserModel::SetSurgeonRole(bool isChecked){
+    m_IsRole[static_cast<int>(m_Roles::Surgeon)] = isChecked;
+}
+
+void NewUserModel::SetTechRole(bool isChecked){
+    m_IsRole[static_cast<int>(m_Roles::Tech)] = isChecked;
+}
+
+bool NewUserModel::GetAdminRole() const
+{
+    //std::cout << "Get admin : " << m_IsRole[Admin] <<  std::endl;
+    return m_IsRole[static_cast<int>(m_Roles::Admin)];
+}
+
+bool NewUserModel::GetNurseRole() const
+{
+    return m_IsRole[static_cast<int>(m_Roles::Nurse)];
+}
+
+bool NewUserModel::GetTechRole() const
+{
+    return m_IsRole[static_cast<int>(m_Roles::Tech)];
+
+}
+bool NewUserModel::GetSurgeonRole() const
+{
+    return m_IsRole[static_cast<int>(m_Roles::Surgeon)];
+}
+
+
 std::string NewUserModel::GetUsername() const
 {
     return m_Username;

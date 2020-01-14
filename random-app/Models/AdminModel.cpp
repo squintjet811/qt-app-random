@@ -22,18 +22,18 @@ void AdminModel::RemoveUser()
 
 }
 
-void AdminModel::querUser(QSqlQuery dBQery)
+void AdminModel::querUser(QSqlQuery &dBQery)
 {
 
     std::string queryStatement =
-        "SELECT users.firstName, users.lastName, GROUP_CONCAT(usersToRoles.role SEPARATOR ',') FROM users LEFT JOIN  usersToRoles ON users.id = usersToRoles.id GROUP BY users.firstName, users.lastName;";
+        "SELECT users.firstName, users.lastName, GROUP_CONCAT(usersToRoles.role SEPARATOR ',') AS role FROM users LEFT JOIN  usersToRoles ON users.id = usersToRoles.id GROUP BY users.firstName, users.lastName;";
     std::cout << queryStatement << std::endl;
     if((*m_pDataBaseConnector).GetQueryObject()->open())
     {
 
          dBQery = QSqlQuery(*m_pDataBaseConnector->GetQueryObject());
          dBQery.exec(QString::fromStdString(queryStatement));
-         std::cout << "Number of records: " <<dBQery.record().count() <<std::endl;
+         std::cout << "Number of records: " <<dBQery.size() <<std::endl;
     }
     else
     {

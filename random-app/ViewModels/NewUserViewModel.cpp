@@ -65,6 +65,71 @@ void NewUserViewModel::SetUserRole(QString userRole)
     }
 }
 
+void NewUserViewModel::SetAdminRole(bool isChecked)
+{
+    auto curRoleInModel = m_pNewUserModel->GetAdminRole();
+    //std::cout << "Admin is not reading" << isChecked << " , "<<curRoleInModel << std::endl;
+    if (curRoleInModel != isChecked)
+    {
+        m_pNewUserModel->SetAdminRole(isChecked);
+        emit AdminRoleChanged();
+    }
+}
+
+void NewUserViewModel::SetNurseRole(bool isChecked)
+{
+    auto curRoleInModel = m_pNewUserModel->GetNurseRole();
+    if (curRoleInModel != isChecked)
+    {
+        m_pNewUserModel->SetNurseRole(isChecked);
+        emit NurseRoleChanged();
+    }
+}
+
+void NewUserViewModel::SetTechRole(bool isChecked)
+{
+    auto curRoleInModel = m_pNewUserModel->GetTechRole();
+    if (curRoleInModel != isChecked)
+    {
+        m_pNewUserModel->SetTechRole(isChecked);
+        emit TechRoleChanged();
+    }
+}
+
+void NewUserViewModel::SetSurgeonRole(bool isChecked)
+{
+    auto curRoleInModel = m_pNewUserModel->GetSurgeonRole();
+    if (curRoleInModel != isChecked)
+    {
+        m_pNewUserModel->SetSurgeonRole(isChecked);
+        emit SurgeonRoleChanged();
+    }
+}
+
+bool NewUserViewModel::GetAdminRole() const
+{
+    return m_pNewUserModel->GetAdminRole();
+}
+
+bool NewUserViewModel::GetNurseRole() const
+{
+    return m_pNewUserModel->GetNurseRole();
+}
+
+bool NewUserViewModel::GetTechRole() const
+{
+    return m_pNewUserModel->GetTechRole();
+}
+
+bool NewUserViewModel::GetSurgeonRole() const
+{
+    return m_pNewUserModel->GetSurgeonRole();
+}
+
+
+
+
+
 QString NewUserViewModel::GetUsername() const
 {
     return QString::fromStdString(m_pNewUserModel->GetUsername());

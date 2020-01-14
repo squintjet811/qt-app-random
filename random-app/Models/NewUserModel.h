@@ -3,11 +3,14 @@
 #ifndef NEWUSERMODEL_H
 #define NEWUSERMODEL_H
 
+#define NUM_ROLE 4
+
 #include <memory>
 #include <iostream>
 
 #include "ViewModels/PageNavigator.h"
 #include "Service/DataBaseConnector.h"
+
 
 class NewUserModel
 {
@@ -20,6 +23,10 @@ public:
     void SetPassword(std::string password);
     void SetPasswordConfirm(std::string passwordConfirm);
     void SetUserRole(std::string userRole);
+    void SetAdminRole(bool isChecked);
+    void SetNurseRole(bool isChecked);
+    void SetTechRole(bool isChecked);
+    void SetSurgeonRole(bool isChecked);
 
     std::string GetUsername() const;
     std::string GetFirstName() const;
@@ -27,6 +34,13 @@ public:
     std::string GetPassword() const;
     std::string GetPasswordConfirm() const;
     std::string GetUserRole() const;
+    bool GetAdminRole() const;
+    bool GetNurseRole() const;
+    bool GetTechRole() const;
+    bool GetSurgeonRole() const;
+
+
+
 
     void CreateUser();
 
@@ -45,6 +59,16 @@ private:
 
     std::string m_UserRoleString;
     int m_UserRoleInt;
+
+    enum class m_Roles{
+        Admin,
+        Nurse,
+        Tech,
+        Surgeon
+    };
+
+    bool m_IsRole[NUM_ROLE];
+
 };
 
 #endif //NEWUSERMODEL_H

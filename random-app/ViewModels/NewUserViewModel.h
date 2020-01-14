@@ -7,10 +7,6 @@
 
 #include "Models/NewUserModel.h"
 
-// Connects the NewUser backend model (C++ files) to the frontend NewUser pages such as
-// AddUser.qml.
-// Contains functionality for the NewUser class, e.g. registering a new user into the
-// application (saving user role, login info, etc.)
 
 class NewUserViewModel: public QObject
 {
@@ -21,6 +17,11 @@ class NewUserViewModel: public QObject
 
     Q_PROPERTY(QString password READ GetPassword WRITE SetPassword NOTIFY passwordChanged)
     Q_PROPERTY(QString passwordConfirm READ GetPasswordConfirm WRITE SetPasswordConfirm NOTIFY passwordConfirmChanged)
+    // property for role selection
+    Q_PROPERTY(bool isAdminRole READ GetAdminRole WRITE SetAdminRole NOTIFY AdminRoleChanged)
+    Q_PROPERTY(bool isNurseRole READ GetNurseRole WRITE SetNurseRole NOTIFY NurseRoleChanged)
+    Q_PROPERTY(bool isTechRole READ GetTechRole WRITE SetTechRole NOTIFY TechRoleChanged)
+    Q_PROPERTY(bool isSurgeonRole READ GetSurgeonRole WRITE SetSurgeonRole NOTIFY SurgeonRoleChanged)
 
     Q_PROPERTY(QString userRole READ GetUserRole WRITE SetUserRole NOTIFY userRoleChanged)
 
@@ -33,6 +34,16 @@ public:
     void SetPassword(QString password);
     void SetPasswordConfirm(QString passwordConfirm);
     void SetUserRole(QString userRole);
+
+    void SetAdminRole(bool isButtonChecked);
+    void SetNurseRole(bool isButtonChecked);
+    void SetTechRole(bool isButtonChecked);
+    void SetSurgeonRole(bool isButtonChecked);
+
+    bool GetAdminRole() const;
+    bool GetTechRole() const;
+    bool GetSurgeonRole() const;
+    bool GetNurseRole() const;
 
     QString GetUsername() const;
     QString GetFirstName() const;
@@ -91,6 +102,12 @@ signals:
     void passwordChanged();
     void passwordConfirmChanged();
     void userRoleChanged();
+    void AdminRoleChanged();
+    void NurseRoleChanged();
+    void TechRoleChanged();
+    void SurgeonRoleChanged();
+
+
 
 private:
     std::shared_ptr<NewUserModel> m_pNewUserModel;

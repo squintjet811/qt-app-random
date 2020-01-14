@@ -17,7 +17,7 @@ public:
     ~AdminModel();
     void AddUser();
     void RemoveUser();
-    void querUser(QSqlQuery dBQery);
+    void querUser(QSqlQuery &dBQery);
 
 private:
     PageNavigatorViewModel & m_PageNavigator;

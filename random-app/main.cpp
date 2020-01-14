@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
     view->rootContext()->setContextProperty("adminViewModel", &adminViewModel);
     view->rootContext()->setContextProperty("newUserViewModel", &newUserViewModel);
 
-    view->setSource(QStringLiteral("qrc:/QMLPages/Login/Admin.qml"));
+    view->setSource(QStringLiteral("qrc:/main.qml"));
     //view->show();
 
     return app.exec();
